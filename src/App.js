@@ -1,25 +1,17 @@
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Menu from "./components/Menu"
-import AboutMe from './components/menu-items/AboutMe'
-import MyContacts from './components/menu-items/MyContacts'
-import MyProjects from './components/menu-items/MyProjects'
+import AboutMe from './components/pages/AboutMe'
+import MyContacts from './components/pages/MyContacts'
+import MyProjects from './components/pages/MyProjects'
 
 function App() {
 	return (
 		<div className="main">
 			<Router>
 				<Menu />
-				<Switch>
-					<Route path='/AboutMe'>
-						<AboutMe />
-					</Route>
-					<Route path='/MyContacts'>
-						<MyContacts />
-					</Route>
-					<Route path='/MyProjects'>
-						<MyProjects />
-					</Route>
-				</Switch>
+				<Route path='/my-contacts' component={MyContacts}/>
+				<Route path='/my-projects' component={MyProjects}/>
+				<Route exact path='/' component={AboutMe}/>
 			</Router>
 		</div>
 	);
