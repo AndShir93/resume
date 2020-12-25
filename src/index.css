@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+img{
+  width: 100%;
+}
 .main{
   max-width: 1200px;
   margin: 0 auto;
@@ -84,10 +87,23 @@ code {
   color: #e65252;
   margin: 0 0 .5em 0;
 }
-.project__name:after{
-  content: '';
-  height: 1px;
-  display: block;
-  width: 120%;
-  background-color: #e65252
+.project{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: min-content min-content;
+  grid-template-areas: "name name"
+                       "img description";
+  gap: 1rem;
+}
+.project__name{
+  grid-area: name;
+}
+.project__img-wrap{
+  grid-area: img;
+}
+.project__description{
+  grid-area: description;
+  font-size: 1.2rem;
+  font-weight: 100;
+  line-height: 1.2em;
 }

@@ -9,7 +9,7 @@ function MyProjects(){
             <div key={projects.indexOf(p)} className="project">
                     <h2 className="project__name">{p.title}</h2>
                     <div className="project__img-wrap"><img src={p.image} alt=""/></div>
-                    <div>{ p.description }</div>
+                    <div className="project__description">{ p.description }</div>
             </div>
         )}
         </div>
