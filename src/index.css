@@ -22,6 +22,13 @@ img{
   grid-template-columns: 200px auto;
   column-gap: 20px;
 }
+.fade-appear{
+  opacity: 0;
+}
+.fade-appear.fade-appear-active{
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
 .menu{
   display: flex;
   flex-direction: column;
@@ -69,16 +76,93 @@ img{
 .about-me__name{
   font-size: 2rem;
   font-weight: bold;
-  color: #fff;
-  color: #000;
-}
-.about-me__last-name{
-  font-size: 2rem;
-  font-weight: bold;
   color: #e65252;
 }
-.skills__icons{
+.skills{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+}
+.skills__title{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e65252;
+}
+.skill__icons{
   width: 40px;
+}
+.skill{
+  position: relative;
+  animation: show 1s ease-in-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+.skill__diagram{
+  fill: transparent;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  left: -45px;
+  top: -45px;
+}
+.skill__value{
+  stroke-width: 4px;
+  animation-duration: 1.5s;
+  transition-property: all;
+  transition-duration: 1.5s;
+  animation-name: render;
+  stroke-dasharray: 0 100;
+}
+.skill .skill__value{ 
+  transition-delay: 1s;
+  transition: stroke-dasharray 1s;
+}
+.skill:nth-child(1) .skill__value{
+  animation-delay: 500ms;
+  stroke-dasharray: 80 100;
+}
+.skill:nth-child(2) .skill__value{
+  animation-delay: 1000ms;
+  stroke-dasharray: 70 100;
+}
+.skill:nth-child(3) .skill__value{
+  animation-delay: 1500ms;
+  stroke-dasharray: 60 100;
+}
+.skill:nth-child(4) .skill__value{
+  animation-delay: 2000ms;
+  stroke-dasharray: 10 100;
+}
+.skill:nth-child(1){
+  animation-delay: 500ms;
+}
+.skill:nth-child(2){
+  animation-delay: 1000ms;
+}
+.skill:nth-child(3){
+  animation-delay: 1500ms;
+}
+.skill:nth-child(4){
+  animation-delay: 2000ms;
+}
+@keyframes render{
+  0%{ stroke-dasharray: 0 100;}
+}
+@keyframes show{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.contacts__title{
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 100;
+  color: #e65252;
+  margin: 0 0 .5em 0;
 }
 .project__name{
   display: inline-block;
@@ -106,4 +190,18 @@ img{
   font-size: 1.2rem;
   font-weight: 100;
   line-height: 1.2em;
+}
+.contact__item{
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+.contact__mail{
+  background: url('/src/images/gmail.svg')
+}
+.contact__tel{
+  background: url('/src/images/smartphone.svg')
+}
+.contact__vk{
+  background: url('/src/images/vk.svg')  
 }
