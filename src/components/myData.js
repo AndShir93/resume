@@ -10,9 +10,10 @@ import REACTsvg from '../images/react.svg'
 const my ={
     name: 'Андрей',
     lastName: 'Широбоков',
-    dateBirthday: new Date('1993-03-19'),
-    currentDate: new Date(),
-    getDateBirthday: function(){return Math.trunc((this.currentDate - this.dateBirthday)/3.15589e10)}
+    dateBirthday: '1993-03-19',
+    phone: '8(950) 171 37 44',
+    mail: 'wugandrey@gmail.com',
+    vk: 'https://vk.com/id96268461'
 }
 export default my
 export const projects = [
@@ -24,4 +25,4 @@ export const projects = [
 export const dataSkills = [{ name: 'HTML', value: 80, icons: HTMLsvg, stroke: '#ec6731' },
                 { name: 'CSS', value: 70, icons: CSSsvg, stroke: '#0196e6' },
                 { name: "JS", value: 50, icons: JSsvg, stroke: '#5254ff' },
-                { name: 'React', value: .5, icons: REACTsvg, stroke: '#44b5c4'}]
+                { name: 'React', value: 5, icons: REACTsvg, stroke: '#44b5c4'}]

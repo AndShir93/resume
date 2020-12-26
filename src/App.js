@@ -10,7 +10,6 @@ function App() {
 			<BrowserRouter>
 				<Menu />
 				<div className="info">
-					<Route path='/my-contacts' component={MyContacts}/>
 					<Route path='/my-projects' component={MyProjects}/>
 					<Route path='/about-me' component={AboutMe}/>
 					<Redirect path='/' to="/about-me"/>

@@ -5,7 +5,6 @@ function Menu(){
     return(
         <div className="menu">
                 <NavLink className='menu__item' activeClassName='menu__item_active' to='/about-me'>Обо мне</NavLink>
-                <NavLink className='menu__item' activeClassName='menu__item_active' to='/my-contacts'>Контакты</NavLink>
                 <NavLink className='menu__item' activeClassName='menu__item_active' to='/my-projects'>Мои работы</NavLink>
         </div>
     )
