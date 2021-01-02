@@ -1,6 +1,6 @@
 import { createGlobalStyle} from "styled-components"
-
 export const GlobalStyles = createGlobalStyle`
+
 ::-webkit-scrollbar-track {  background-color: ${({theme}) => theme.backgroundColor};}
 ::-webkit-scrollbar-track-piece { background-color: #ffffff;}
 ::-webkit-scrollbar-thumb { height: 50px; background-color: ${({theme}) => theme.color}; border-radius: 3px;}
@@ -48,5 +48,4 @@ body{
     color: ${({theme}) => theme.color};
     transition: background .5s;
 }
-
 `

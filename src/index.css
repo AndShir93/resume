@@ -213,11 +213,16 @@ img{
 }
 .palette{
   grid-area: palette;
+  height: 142px;
+  background: #fff; 
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 .palette__item-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-basis: 33%;
 }
 .palette__item{

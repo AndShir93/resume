@@ -1,11 +1,11 @@
-import React from 'react'
+import React  from 'react'
 import {colorThemes} from './colorThemes'
 function Palette(props){
     return(
         <div className="palette">
-            {colorThemes.map((theme) => 
+            {colorThemes.map((theme) =>
                 <div key={colorThemes.indexOf(theme)} className="palette__item-wrap" onClick={() => props.han(theme)}>
-                    <div className="palette__item" style={{background:theme.color}}></div>
+                    <div className="palette__item" style={{background:theme.backgroundColor, border: `4px solid ${theme.color}`}}></div>
                 </div>
         )}
         </div>

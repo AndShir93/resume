@@ -9,13 +9,14 @@ import { colorThemes } from './components/colorThemes'
 import { ThemeProvider} from "styled-components"
 
 function App() {
-	const [currentTheme, setCurrentTheme] = useState(colorThemes[0])
+	const [currentTheme, setCurrentTheme] = useState(!localStorage.getItem('theme') ? colorThemes[0] : JSON.parse(localStorage.getItem('theme')))
 	
 	function handlerTheme(t){		
 		let i = colorThemes.indexOf(t)
 		setCurrentTheme(
 			colorThemes[i]
 		)
+		localStorage.setItem('theme', JSON.stringify(colorThemes[i]))
 	}
 
 	return (
@@ -24,7 +25,7 @@ function App() {
 				<ThemeProvider theme = {currentTheme}>
 					<GlobalStyles />
 					<Menu />
-					<Palette han={handlerTheme} />
+					<Palette han={handlerTheme}/>
 					<div className="info">
 						<Route path='/my-projects' component={MyProjects}/>
 						<Route path='/about-me' component={AboutMe}/>
